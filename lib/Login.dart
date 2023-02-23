@@ -3,21 +3,20 @@ import 'package:sizer/sizer.dart';
 import 'package:taskgdsc/CostomField.dart';
 
 class Login extends StatelessWidget {
-  TextEditingController FullNmaeController = TextEditingController();
-  TextEditingController EmailController = TextEditingController();
-  TextEditingController PasswordController = TextEditingController();
-  TextEditingController ConfirmPasswordController = TextEditingController();
-  TextEditingController PhoneController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController FullNmaeController = TextEditingController();  //Text Field   Controller
+  TextEditingController EmailController = TextEditingController();      //Text Field   Controller
+  TextEditingController PasswordController = TextEditingController();    //Text Field   Controller
+  TextEditingController ConfirmPasswordController = TextEditingController();  //Text Field   Controller
+  TextEditingController PhoneController = TextEditingController();            //Text Field   Controller
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return SafeArea(      //for Start form under notification Bar 
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,   //to avoid Bottom Inset
         body: Column(
           children: [
-            ClipPath(
+            ClipPath(                      // to make custome shape
               clipper: CustopClipper(),
               child: Container(
                 height: 20.h,
@@ -35,61 +34,57 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            SizedBox(              // to make height space
               height: 5.h,
             ),
-            Form(
-              autovalidateMode:AutovalidateMode.onUserInteraction,
-              key: _formKey,
-              child: Column(
-                children: [
-                  CustomFields(
-                    label: "Full Name",
-                    isPass: false,
-                    isPhone: false,
-                    isEmail: false,
-                    controller: FullNmaeController,
-                    icon: Icon(Icons.person_pin_outlined),
-                  ),
-                  CustomFields(
-                    label: "email",
-                    isPass: false,
-                    isPhone: false,
-                    isEmail: true,
-                    controller: EmailController,
-                    icon: Icon(Icons.email_outlined),
-                  ),
-                  CustomFields(
-                    label: "Password",
-                    isPass: true,
-                    isPhone: false,
-                    isEmail: false,
-                    controller: PasswordController,
-                    icon: Icon(Icons.lock_open),
-                  ),
-                  CustomFields(
-                    label: "Confirm Password",
-                    isPass: true,
-                    isPhone: false,
-                    isEmail: false,
-                    controller: ConfirmPasswordController,
-                    icon: Icon(Icons.lock_open),
-                  ),
-                  CustomFields(
-                    label: "Phone Number",
-                    isPass: false,
-                    isPhone: true,
-                    isEmail: false,
-                    controller: PhoneController,
-                    icon: Icon(Icons.phone_android),
-                  ),
-                ],
-              ),
+            Column(
+              children: [
+                CustomFields(           // Full name text field
+                  label: "Full Name",
+                  isPass: false,
+                  isPhone: false,
+                  isEmail: false,
+                  controller: FullNmaeController,
+                  icon: Icon(Icons.person_pin_outlined),
+                ),
+                CustomFields(          //email text field
+                  label: "email",
+                  isPass: false,
+                  isPhone: false,
+                  isEmail: true,
+                  controller: EmailController,
+                  icon: Icon(Icons.email_outlined),
+                ),
+                CustomFields(                   //password text field
+                  label: "Password",
+                  isPass: true,
+                  isPhone: false,
+                  isEmail: false,
+                  controller: PasswordController,
+                  icon: Icon(Icons.lock_open),
+                ),
+                CustomFields(                       //confirm password text field
+                  label: "Confirm Password",
+                  isPass: true,
+                  isPhone: false,
+                  isEmail: false,
+                  controller: ConfirmPasswordController,
+                  icon: Icon(Icons.lock_open),
+                ),
+                CustomFields(                 //phone number text field
+                  label: "Phone Number",
+                  isPass: false,
+                  isPhone: true,
+                  isEmail: false,
+                  controller: PhoneController,
+                  icon: Icon(Icons.phone_android),
+                ),
+              ],
             ),
             SizedBox(
               height: 6.h,
             ),
-            Container(
+            Container(                           // Register bottom
               margin: EdgeInsets.only(bottom: 2.h),
               height: 7.5.h,
               width: 90.w,
@@ -109,7 +104,7 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
+            Container(                         //Login  bottom
               height: 7.5.h,
               width: 90.w,
               decoration: BoxDecoration(

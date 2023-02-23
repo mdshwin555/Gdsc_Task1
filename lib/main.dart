@@ -10,8 +10,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (BuildContext, Orientation, DeviceType) => GetMaterialApp(
+    return Sizer(                            //Sizer package for get highet & wedth of screen easy
+      builder: (BuildContext, Orientation, DeviceType) => GetMaterialApp(    //GetX package
         debugShowCheckedModeBanner: false,
         home: Login(),
       ),

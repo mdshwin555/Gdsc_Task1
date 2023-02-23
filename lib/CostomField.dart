@@ -63,20 +63,6 @@ class _CustomFieldsState extends State<CustomFields> {
               color: Colors.deepPurple,
             ),
           ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(
-              width: 1.8,
-              color: Colors.deepPurple,
-            ),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(
-              width: 1.8,
-              color: Colors.deepPurple,
-            ),
-          ),
           prefixIcon: widget.icon,
           suffixIcon: widget.isPass == true
               ? IconButton(
