@@ -8,6 +8,7 @@ class CustomFields extends StatefulWidget {
   final bool isEmail;
   final bool isPhone;
   final TextEditingController controller;
+  final FormFieldValidator<String>? validator;
 
   CustomFields({
     required this.label,
@@ -16,6 +17,7 @@ class CustomFields extends StatefulWidget {
     required this.isEmail,
     required this.isPhone,
     required this.controller,
+    required this.validator,
   });
 
   @override
@@ -32,6 +34,7 @@ class _CustomFieldsState extends State<CustomFields> {
       padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 0.8.h),
       child: TextFormField(
         controller: widget.controller,
+        validator: widget.validator,
         obscureText: widget.isPass && hide == true ? true : false,
         keyboardType: widget.isPass == true
             ? TextInputType.visiblePassword
@@ -61,6 +64,20 @@ class _CustomFieldsState extends State<CustomFields> {
             borderSide: BorderSide(
               width: 1.8,
               color: Colors.deepPurple,
+            ),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(
+              width: 1.8,
+              color: Colors.red,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(
+              width: 1.8,
+              color: Colors.red,
             ),
           ),
           prefixIcon: widget.icon,
