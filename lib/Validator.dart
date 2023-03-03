@@ -20,7 +20,7 @@ class Validators {
   static String? confirm_password(String? value) {
     if (value == null || value.isEmpty)
       return 'password must not be empty';
-    else if (value.length < 4)
+    else if (value != password)
       return 'password should be at least 4 characters';
   }
 

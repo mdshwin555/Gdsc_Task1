@@ -20,6 +20,8 @@ class Login extends StatelessWidget {
         resizeToAvoidBottomInset: false, //to avoid Bottom Inset
         body: SingleChildScrollView(
           child: Form(
+            autovalidateMode:
+            AutovalidateMode.onUserInteraction,
             key:_formKey ,
             child: Column(
               children: [
@@ -77,7 +79,7 @@ class Login extends StatelessWidget {
                   onTap: () {
                     if (!_formKey.currentState!.validate()) {
                     } else {
-                      Get.to(Task2());
+                      Get.off(Task2());
                     }
                   },
                   child: Container(

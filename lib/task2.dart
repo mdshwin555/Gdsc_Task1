@@ -52,7 +52,7 @@ class _Task2State extends State<Task2> {
         title: Text("Flutter Map"),
         centerTitle: true,
         toolbarHeight: 13.h,
-        backgroundColor: Color.fromARGB(255, 29, 29, 35),
+        backgroundColor: Color(0xffA3BB98),
         actions: [
           IconButton(
             onPressed: () {
@@ -62,7 +62,7 @@ class _Task2State extends State<Task2> {
           ),
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 7, 15, 119),
+      backgroundColor: Color(0xffF0ECCF),
       body: SafeArea(
         child: Column(
           children: [

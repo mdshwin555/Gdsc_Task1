@@ -44,6 +44,8 @@ class Register extends StatelessWidget {
               ),
               Form(
                 key: _formKey,
+                autovalidateMode:
+                AutovalidateMode.onUserInteraction,
                 child: Container(
                   height: 45.h,
                   width: 100.w,
@@ -78,7 +80,17 @@ class Register extends StatelessWidget {
                           icon: Icon(Icons.lock_open),
                         ),
                         CustomFields(
-                          validator: Validators.confirm_password,///confirm password text field
+                          validator: (String?value){
+                            if (value!.isEmpty)
+                              {
+                                return 'Please re-enter password';
+                              }
+                            else if(PasswordController.text!=ConfirmPasswordController.text)
+                              {
+                                return 'password does not match';
+                              }
+                            return null;
+                          },///confirm password text field
                           label: "Confirm Password",
                           isPass: true,
                           isPhone: false,
@@ -107,7 +119,7 @@ class Register extends StatelessWidget {
                 onTap: () {
                   if (!_formKey.currentState!.validate()) {
                   } else {
-                    Get.to(Task2());
+                    Get.off(Task2());
                   }
                 },
                 child: Container(                           // Register bottom
